@@ -1,0 +1,34 @@
+* C:\Users\jagad\eSim-Workspace\JKFLIPFLOP\JKFLIPFLOP.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/10/22 11:40:01
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M1  VDD k Net-_M1-Pad3_ VDD eSim_MOS_P		
+M4  VDD Q Net-_M1-Pad3_ VDD eSim_MOS_P		
+M6  VDD CLOCK Net-_M1-Pad3_ VDD eSim_MOS_P		
+M11  VDD CLOCK Net-_M11-Pad3_ VDD eSim_MOS_P		
+M16  VDD CLOCK Net-_M11-Pad3_ VDD eSim_MOS_P		
+M13  VDD QBAR Net-_M11-Pad3_ VDD eSim_MOS_P		
+M7  Net-_M1-Pad3_ QBAR Q Net-_M1-Pad3_ eSim_MOS_P		
+M9  Net-_M11-Pad3_ Q Net-_M10-Pad1_ Net-_M11-Pad3_ eSim_MOS_P		
+M2  Q k Net-_M2-Pad3_ Q eSim_MOS_N		
+M8  Q QBAR GND Q eSim_MOS_N		
+M10  Net-_M10-Pad1_ Q GND Net-_M10-Pad1_ eSim_MOS_N		
+M15  QBAR CLOCK Net-_M14-Pad1_ QBAR eSim_MOS_N		
+M3  Net-_M2-Pad3_ CLOCK Net-_M3-Pad3_ Net-_M2-Pad3_ eSim_MOS_N		
+M14  Net-_M14-Pad1_ CLOCK Net-_M12-Pad1_ Net-_M14-Pad1_ eSim_MOS_N		
+M5  Net-_M3-Pad3_ Q GND Net-_M3-Pad3_ eSim_MOS_N		
+M12  Net-_M12-Pad1_ QBAR GND Net-_M12-Pad1_ eSim_MOS_N		
+v1  k GND pulse		
+v4  CLOCK GND pulse		
+v3  CLOCK GND pulse		
+U1  k plot_db		
+U2  Q plot_db		
+U3  QBAR plot_db		
+U5  CLOCK plot_db		
+U4  CLOCK plot_db		
+
+.end

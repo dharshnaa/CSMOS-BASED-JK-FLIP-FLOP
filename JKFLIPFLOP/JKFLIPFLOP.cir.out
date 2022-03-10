@@ -1,0 +1,42 @@
+* c:\users\jagad\esim-workspace\jkflipflop\jkflipflop.cir
+
+.include PMOS-180nm.lib
+.include NMOS-180nm.lib
+m1 vdd k net-_m1-pad3_ vdd CMOSP W=100u L=100u M=1
+m4 vdd q net-_m1-pad3_ vdd CMOSP W=100u L=100u M=1
+m6 vdd clock net-_m1-pad3_ vdd CMOSP W=100u L=100u M=1
+m11 vdd clock net-_m11-pad3_ vdd CMOSP W=100u L=100u M=1
+m16 vdd clock net-_m11-pad3_ vdd CMOSP W=100u L=100u M=1
+m13 vdd qbar net-_m11-pad3_ vdd CMOSP W=100u L=100u M=1
+m7 net-_m1-pad3_ qbar q net-_m1-pad3_ CMOSP W=100u L=100u M=1
+m9 net-_m11-pad3_ q net-_m10-pad1_ net-_m11-pad3_ CMOSP W=100u L=100u M=1
+m2 q k net-_m2-pad3_ q CMOSN W=100u L=100u M=1
+m8 q qbar gnd q CMOSN W=100u L=100u M=1
+m10 net-_m10-pad1_ q gnd net-_m10-pad1_ CMOSN W=100u L=100u M=1
+m15 qbar clock net-_m14-pad1_ qbar CMOSN W=100u L=100u M=1
+m3 net-_m2-pad3_ clock net-_m3-pad3_ net-_m2-pad3_ CMOSN W=100u L=100u M=1
+m14 net-_m14-pad1_ clock net-_m12-pad1_ net-_m14-pad1_ CMOSN W=100u L=100u M=1
+m5 net-_m3-pad3_ q gnd net-_m3-pad3_ CMOSN W=100u L=100u M=1
+m12 net-_m12-pad1_ qbar gnd net-_m12-pad1_ CMOSN W=100u L=100u M=1
+v1  k gnd pulse(0 5 0 1 1 5 50)
+v4  clock gnd pulse(0 5 0 1 1 5 50)
+v3  clock gnd pulse(0 5 0 1 1 5 50)
+* u1  k plot_db
+* u2  q plot_db
+* u3  qbar plot_db
+* u5  clock plot_db
+* u4  clock plot_db
+.tran 5e-00 200e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot db(k)
+plot db(q)
+plot db(qbar)
+plot db(clock)
+plot db(clock)
+.endc
+.end
